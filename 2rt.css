@@ -1,0 +1,310 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    
+    font-size: 1vw;
+    font-family: 'Albert Sans', sans-serif;
+}
+@import url('https://fonts.googleapis.com/css2?family=Turret+Road:wght@200;300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+.Hero{
+    /* background: linear-gradient(rgba(45, 25, 7, 0.7), rgba(45, 25, 7, 0.7)), url('Group\ 378.svg'); */
+    height: 100%;
+    background-color: #FFF4EA;
+    background-image: url('Group\ 371.svg');
+    width: 100%;
+    background-position: top right;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #131415;
+    overflow: hidden;
+}
+.container{
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+nav {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    z-index: 99;
+}
+.nav-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 97%;
+    
+}
+.nav-links{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    text-decoration: none;
+    list-style: none;
+    color: #131415;
+}
+.nav-item{
+    text-decoration: none;
+font-style: normal;
+font-size: 20px;
+line-height: 39px;
+font-family: Silkscreen;
+}
+a{
+    text-decoration: none;
+    color: #131415;
+}
+.nav-btn{
+    background: #FF8100;
+    box-shadow: -4px 4px 10px rgba(220, 113, 14, 0.3);
+    border-radius: 50px;
+    width: 147px;
+    height: 57px;
+    border-width: 0;
+    color: white;
+    font-family: Silkscreen;
+    font-size: 15px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-btn a{
+    color: white;
+}
+.burger {
+    display: none;
+}
+@media screen and (max-width:800px){
+    .nav-links{
+        position: absolute;
+        z-index: 98;
+        right: 0;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        background-color: #FF8100;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 50%;
+        gap: 0px;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        padding-top: 70px;
+    }
+    .nav-item{
+        font-size: 5rem;
+        width: 100%;
+        border-bottom: .5px dashed rgba(13, 6, 0, 1);
+        padding: 3rem 10px 3rem 10px;
+    }
+    .nav-btn{
+        width: 100%;
+        border-bottom: 1px dashed rgba(13, 6, 0, 1);
+        border-radius: 0;
+        box-shadow: none;
+        text-align: left;
+        font-size: 5rem;
+        height: 12rem;
+        justify-content: flex-start;
+        padding: 3rem 10px 3rem 10px;
+        color: #131415;
+    }
+    .nav-btn a{
+        color: #131415;
+    }
+    .burger {
+        display: block;
+        z-index: 99;
+        cursor: pointer;
+        padding: 5px;
+    }
+    .nav-active{
+        transform: translate(0%);
+    }
+    .aboutus{
+        background: none !important;
+    }
+}
+
+.hero-text{
+    overflow: hidden;
+    font-family: Silkscreen;
+    max-width: 90%;
+}
+  
+.aha2{
+    font-family: Silkscreen;
+    font-weight: 100;
+    text-align: center;
+    font-size: clamp(35px, 6rem, 65px);
+}
+.hero-t2{
+    padding-top: 25vh;
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;   
+    gap: 3rem; 
+}
+.hh-text {
+    font-family: 'Turret Road', cursive;
+    max-width: 700px;
+    font-size: clamp(20px, 3rem, 50px) !important;
+}
+.h-t-s{
+color: #FF8100;
+padding-left: 0 !important;
+}
+
+.marquee{
+    font-family: Silkscreen;
+    font-weight: 100;
+    font-size: clamp(40px, 6rem, 65px);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    border:1px dashed #FF8100;
+    border-left: none;
+    border-right: none;
+    margin-top: 8rem;
+    margin-bottom: 8rem;
+    text-align: center;
+    color: rgba(255, 129, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+    overflow: hidden;
+}
+
+.marque-item{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.aboutus{
+    width: 90%;
+    padding-top: 23vh;
+    margin-top: 10rem;
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;   
+    gap: 3rem; 
+    background: url(aa-left.svg) left clamp(10px, 2rem, 10px), url(aa-right.svg) right bottom;
+    background-repeat: no-repeat;
+}
+.a-header{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    font-family: Silkscreen;
+    flex-direction: column;
+    padding-left: 20px;
+}
+.ahas{
+    font-size: clamp(12px, 3rem, 20px);
+    max-width: 700px;
+}
+.a-header h1{
+    font-weight: 100;
+    font-size: clamp(30px, 4rem, 50px);
+}
+.a-text{
+    display: flex;
+flex-direction: row;
+justify-content: flex-end;
+align-items: center;
+padding: 10px;
+}
+.a-text p {
+
+    font-family: 'Turret Road', cursive;
+    max-width: 700px;
+    font-size: clamp(15px, 3rem, 30px);
+}
+.a-text p span{
+    padding-left: 15rem;
+}
+
+
+.team{
+    background: url(a-left.svg) left center, url(a-right.svg) right bottom;
+    background-repeat: no-repeat;
+    padding-top: 15vh
+}
+.t-text{
+    display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 10px;
+gap: 10px;
+}
+.t-member{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 46px;
+    font-family: 'Turret Road', cursive;
+    font-weight: 100;
+    font-size: clamp(20px, 4rem, 30px);
+}
+.t-member h3{
+    font-family: 'Turret Road', cursive;
+    font-weight: 100;
+    font-size: clamp(20px, 4rem, 35px);
+}
+.t-member div{
+    width: 56px;
+    height: 13px;
+
+    background: #DC710E;
+    opacity: 0.5;
+}
+
+.contact{
+    gap: 0.5rem;
+    align-items: center;
+    text-align: center;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    background: url(aa-left.svg) left center(10px, 2rem, 10px), url(aa-right.svg) right center;
+}
+
+.chart-container{
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+width: 90%;
+margin: auto;
+background-color: #FFF4EA;
+}
+.linechart{
+    position: relative;
+width: 50%;
+margin: auto;
+}
+.donutchart{
+    position: relative;
+width: 50%;
+margin: auto;
+}
