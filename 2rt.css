@@ -138,6 +138,12 @@ a{
     .aboutus{
         background: none !important;
     }
+    .linechart{
+    width: 90%
+    }
+    .donutchart{
+    width: 90%;
+    }
 }
 
 .hero-text{
