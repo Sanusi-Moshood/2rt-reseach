@@ -56,16 +56,16 @@ function makeLineChart(values) {
                 text:'2RT-Price-Performance',
                 font: {
                   family: "Turret Road",
-                  size: 25,
+                  size: "15%",
                   weight: 'bold',
                   lineHeight: 1.2,
                 },
-                padding: {top: 10, left: 0, right: 0, bottom: 0}
+                padding: {top: 15, left: 0, right: 0, bottom: 0}
               }
           },
           Percentage: {
             grid:{
-              display:true
+              display:false
             },
             beginAtZero: true,
             position: 'right',
@@ -74,11 +74,11 @@ function makeLineChart(values) {
               text:'Btc-Price-Performance',
               font: {
                 family: "Turret Road",
-                size: 25,
+                size: '15%',
                 weight: 'bold',
                 lineHeight: 1.2,
               },
-              padding: {top: 10, left: 0, right: 0, bottom: 0}
+              padding: {top: 15, left: 0, right: 0, bottom: 0}
             }
 
           },
