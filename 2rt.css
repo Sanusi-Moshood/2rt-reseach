@@ -144,19 +144,53 @@ a{
     .donutchart{
     width: 90%;
     }
+
+    .chart-container{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        margin: auto;
+        background-color: #FFF4EA;
+        gap: 5rem;
+        }
+        .linechart{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        width: 70% !important;
+        padding-top: 20px;
+        }
+        .donutchart{
+            position: relative;
+        width: 60% !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+        }
 }
 
 .hero-text{
     overflow: hidden;
     font-family: Silkscreen;
-    max-width: 90%;
+    background-image: none !important;
+    width: 100% !important;
 }
   
 .aha2{
-    font-family: Silkscreen;
-    font-weight: 100;
     text-align: center;
-    font-size: clamp(35px, 6rem, 65px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.aca{
+    text-align: center;
 }
 .hero-t2{
     padding-top: 25vh;
@@ -239,14 +273,14 @@ align-items: center;
 padding: 10px;
 }
 .a-text p {
-
+    text-align: justify;
     font-family: 'Turret Road', cursive;
     max-width: 700px;
     font-size: clamp(15px, 3rem, 30px);
 }
-.a-text p span{
+/* .a-text p span{
     padding-left: 15rem;
-}
+} */
 
 
 .team{
@@ -294,6 +328,13 @@ gap: 10px;
     padding-bottom: 10vh;
     background: url(aa-left.svg) left center(10px, 2rem, 10px), url(aa-right.svg) right center;
 }
+.c-c{
+    text-align: center !important;
+}
+.cc-li{
+    cursor: pointer;
+    text-decoration: none;
+}
 
 .chart-container{
 display: flex;
@@ -303,14 +344,18 @@ justify-content: center;
 width: 90%;
 margin: auto;
 background-color: #FFF4EA;
+gap: 5%;
 }
 .linechart{
     position: relative;
-width: 50%;
-margin: auto;
+width: 60%;
+padding-top: 20px;
 }
 .donutchart{
     position: relative;
-width: 50%;
-margin: auto;
+width: 35%;
+
+}
+.p-b{
+    padding-bottom: 2rem;
 }

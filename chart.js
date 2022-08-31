@@ -1,41 +1,123 @@
 
 // Getting the csv files and converting to json
-d3.csv("IOD-performance.csv").then(makeLineChart);
+d3.csv("line-graph.csv").then(makeLineChart);
 d3.csv("allocation.csv").then(makePieChart);
 
 
-//Creating the line chart for IOD performance
 function makeLineChart(values) {
-    var number = values.map(function (d) {
-      return d.t;
+    var Date = values.map(function (d) {
+      return d.Date;
     });
     var value = values.map(function (d) {
-      return d.x;
+      return d.Price;
+    });
+    var BTC = values.map(function (d) {
+      return d.Btc;
     });
 
     var chart = new Chart("myChart", {
       type: "line",
       data: {
-        labels: number,
-        datasets: [
-            
-          {
-            label: '',
+        labels: Date,
+        datasets: [{
+            label: '2RT-Price-Performance',
             data: value ,
             backgroundColor: ["rgba(255, 129, 0, 0.8)"],
             borderColor: ["rgba(255, 129, 0, 1)"],
-            borderWidth: 1
-          }
+            borderWidth: 1,
+          },
+          {
+            label: 'Btc-Price-Performance',
+            data: BTC ,
+            backgroundColor: ["rgba(255, 199, 0, 0.9)"],
+            borderColor: ["rgba(255, 199, 0, 0.9)"],
+            borderWidth: 1,
+            yAxisID:'Percentage'
+          },
+
         ]
       },
+      
     options: {
-        responsive: true
+
+      plugins:{
+        legend:{
+          display:true
+        }
+      },
+        responsive: true,
+        scales: {
+          y: {
+            grid:{
+              display:false
+            },
+              title: {
+                display: true,
+                text:'2RT-Price-Performance',
+                font: {
+                  family: "Turret Road",
+                  size: 25,
+                  weight: 'bold',
+                  lineHeight: 1.2,
+                },
+                padding: {top: 10, left: 0, right: 0, bottom: 0}
+              }
+          },
+          Percentage: {
+            grid:{
+              display:true
+            },
+            beginAtZero: true,
+            position: 'right',
+            title: {
+              display: true,
+              text:'Btc-Price-Performance',
+              font: {
+                family: "Turret Road",
+                size: 25,
+                weight: 'bold',
+                lineHeight: 1.2,
+              },
+              padding: {top: 10, left: 0, right: 0, bottom: 0}
+            }
+
+          },
+          x: {
+            grid:{
+              display:false
+            },
+              title: {
+                display:true,
+                text:'date',
+                fotSize:100,
+                font: {
+                  family: "Turret Road",
+                  size: 25,
+                  weight: 'bold',
+                  lineHeight: 1.2,
+                },
+                padding: {top: 10, left: 0, right: 0, bottom: 0}
+              }
+          }
+      }
     }
     });
   }
 
+  const defaultLegendClickHandler = Chart.defaults.plugins.legend.onClick;
 
-//Creating the line chart for Allocation
+  function newLegendClickHandler(e, legendItem, legend) {
+    const index = legendItem.datasetIndex;
+    const ci = legend.chart;
+    if (ci.isDatasetVisible(index)) {
+        ci.hide(index);
+        legendItem.hidden = false;
+    } else {
+        ci.show(index);
+        legendItem.hidden = false;
+    }
+}
+ 
 
   function makePieChart(values) {
 
@@ -64,11 +146,16 @@ function makeLineChart(values) {
             
         },
         options: {
-            responsive: true
+            responsive: true,
+            plugins: {
+              legend: {
+                  onClick: newLegendClickHandler
+              }
+          }
+
         }
     });
   }
-
 
 
 
